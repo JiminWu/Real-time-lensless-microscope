@@ -48,7 +48,7 @@ Center = 768
 ReconSize = 768
 
 psf_file='./sample_data/psf5_2048.mat'
-model_filepath='./trained_data/'
+model_filepath='./trained_model/'
 model, args = hp.load_model(psf_file, model_filepath, device = device)
 
 
