@@ -139,6 +139,8 @@ class SubWindow(QWidget):
 
         
 ic = TIS.Imaging.ICImagingControl()
+snapsink = TIS.Imaging.FrameSnapSink(TIS.Imaging.MediaSubtypes.RGB32)
+ic.Sink = snapsink
 
 def SelectDevice():
     ic.LiveStop()
@@ -151,7 +153,14 @@ def ShowProperties():
     if ic.DeviceValid is True:
         ic.ShowPropertyDialog()
         ic.SaveDeviceStateToFile("device.xml")
-       
+        
+def SnapImage():
+    '''
+    Snap and save an image
+    '''
+    image = snapsink.SnapSingle(TimeSpan.FromSeconds(1))
+    TIS.Imaging.FrameExtensions.SaveAsBitmap(image,"test.bmp")
+    
 def Close():
     if ic.DeviceValid is True:
         ic.LiveStop()
@@ -195,6 +204,10 @@ class Ui_MainWindow(object):
         self.saveButton.setGeometry(QtCore.QRect(1660, 70, 81, 41))
         self.saveButton.setFont(font)
         self.saveButton.setObjectName("pushButton")
+        
+        snapAct =  QAction("Snap &Image",app)
+        snapAct.triggered.connect(SnapImage)
+        self.saveButton.addAction(snapAct)
         
         
         MainWindow.setCentralWidget(self.centralwidget)
