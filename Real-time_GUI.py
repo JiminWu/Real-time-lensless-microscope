@@ -43,8 +43,6 @@ matplotlib.use('Qt5Agg')
 
 ############################## Network loading ######################################
 
-## import
-
 CapSize = 1536
 Center = 768
 ReconSize = 768
@@ -90,7 +88,7 @@ class SubWindow(QWidget):
     
     def update_disp(self):
         
-        start = time.time()
+        # start = time.time()
         self.frame = self.snapsink.SnapSingle(TimeSpan.FromSeconds(-1))
         
         imgcontent = C.cast(self.frame.GetIntPtr().ToInt64(),
@@ -105,8 +103,6 @@ class SubWindow(QWidget):
         img_gray = cv2.cvtColor(img[:, 512:2560, :], cv2.COLOR_BGR2GRAY)
         img_gray = cv2.flip(cv2.rotate(img_gray, cv2.ROTATE_180),1)
         raw = hp.crop_images(img_gray, args.psf_height_org, args.psf_width_org, args.psf_height_crop, args.psf_width_crop, args.psf_shift_height, args.psf_shift_width)
-            #img_gray[200:1736, 200:1736] #cv2.resize(img_gray, (CapSize, CapSize))
-        
         
         img = torch.tensor(raw, dtype=torch.float32, device=device).unsqueeze(0).unsqueeze(0)
         output = model((img).to(device))
@@ -121,8 +117,6 @@ class SubWindow(QWidget):
         self.output_numpy = self.output_numpy.astype(np.uint8)
         self.capture = raw.astype(np.uint8)
 
-        
-        # Drop off the first y element, append a new one.
         frame = cv2.cvtColor(self.capture, cv2.COLOR_BGR2RGB)
         recon = cv2.cvtColor(self.output_numpy, cv2.COLOR_BGR2RGB)
         
@@ -140,7 +134,7 @@ class SubWindow(QWidget):
         self.ax2.setPixmap(QPixmap.fromImage(q_image))
 
        # self.ic.Dispose()
-        end = time.time()
+       # end = time.time()
        # print(end - start)
 
         
