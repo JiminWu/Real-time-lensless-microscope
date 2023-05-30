@@ -1,0 +1,17 @@
+cudatoolkit
+hdf5storage
+imageio
+ipykernel
+ipython
+matplotlib
+numpy
+opencv-python
+pip
+pyqt5
+python
+pytorch
+pytorch-msssim
+scikit-image
+scipy
+setuptools
+torchvision
