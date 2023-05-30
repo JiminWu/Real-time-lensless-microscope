@@ -3,7 +3,7 @@ The codes for the real-time lensless microscope ([link](https://link-to-be-updat
 
 **to be updated**: "A real-time, deep-learning aided lensless microscope", Jimin Wu, Vivek Boominathan, Ashok Veeraraghavan* and Jacob T. Robinson*
 
-* Corresponding authors </sub>
+</sub> * Corresponding authors </sub>
 
 ## MultiFlatNet Reconstruction
 
