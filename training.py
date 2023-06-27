@@ -15,7 +15,7 @@ import hdf5storage
 from torch.utils.data import Dataset, DataLoader
 import cv2
 
-import models.fftlayer as fftlayer
+import models.fftlayer_w as fftlayer
 import models.dataset as ds
 import models.discriminator as dis
 import helper as hp
