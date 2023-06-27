@@ -1,0 +1,20 @@
+{
+  "psf_num": 5,
+  "epochs": 100,
+  "lr": 0.0001,
+  "batch_size": 1,
+  "device": "0",
+  "load_path": null,
+  "save_checkponts": true,
+  "lambda_SSIM": 1.0,
+  "lambda_L1": 1.0,
+  "lambda_adversarial": 0.03,
+  "psf_height_org": 2048,
+  "psf_width_org": 2048,
+  "psf_height_crop": 1536,
+  "psf_width_crop": 1536,
+  "psf_shift_height": -56,
+  "psf_shift_width": -56,
+  "padding_fft_x": 0,
+  "padding_fft_y": 0
+}
