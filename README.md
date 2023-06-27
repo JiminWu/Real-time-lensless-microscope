@@ -15,6 +15,13 @@ We provide a pre-trained model with several exapmles of similated (.png) data wi
 ### Real-time GUI
 Current GUI works with ImagingSource DMM 37UX178-ML board-level camera (see more at ImagingSource support [link](https://github.com/TheImagingSource/IC-Imaging-Control-Samples/tree/master/Python)). qt5-simple.py provides a live stream test of the camera. 
 
+### Acknowledgements
+This repository drew inspiration and help from following resources:
+* FlatNet: https://siddiquesalman.github.io/flatnet/
+* MultiWienerNet: https://waller-lab.github.io/MultiWienerNet/
+* Unet: https://github.com/milesial/Pytorch-UNet
+* ImagingSource sensor Pytorch support: https://github.com/TheImagingSource/IC-Imaging-Control-Samples/tree/master/Python
+
 ### Contact Us
 In case of any queries regarding the code, please reach out to [Jimin](mailto:jimin.wu@rice.edu).
 Other raw and analysed data are available for research purpose from corresponding author upon reasonable request.
